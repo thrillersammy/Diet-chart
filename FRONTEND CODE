@@ -1,0 +1,172 @@
+health is wealth
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Chart</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4d4d4;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        #diet-chart h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        #diet-chart input {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #diet-chart button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #diet-chart button:hover {
+            background-color: #ff79a6;
+        }
+
+        #diet-chart ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        #diet-chart ul li {
+            margin: 1rem 0;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Diet Chart</a></li>
+                <li><a href="#">Progress</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="diet-chart">
+            <h2>Diet Chart</h2>
+            <div class="input-container">
+                <input type="text" id="meal" placeholder="Meal">
+                <input type="number" id="calories" placeholder="Calories">
+                <button onclick="addEntry()">Add</button>
+            </div>
+            <ul id="entries">
+                <!-- Entries will be appended here by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Diet Chart</p>
+    </footer>
+
+    <script>
+        function addEntry() {
+            const meal = document.getElementById('meal').value;
+            const calories = document.getElementById('calories').value;
+            const date = new Date().toLocaleDateString();
+
+            if (meal && calories) {
+                const entry = `${date}: ${meal} - ${calories} calories`;
+                const li = document.createElement('li');
+                li.textContent = entry;
+                document.getElementById('entries').appendChild(li);
+
+                // Clear inputs
+                document.getElementById('meal').value = '';
+                document.getElementById('calories').value = '';
+            } else {
+                alert('Please enter both meal and calories.');
+            }
+        }
+    </script>
+</body>
+</html>
