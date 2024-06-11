@@ -1,0 +1,177 @@
+Health
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Chart</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            color: #d4d4d4;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        #diet-chart h2, #login h2, #profile h2, #diet-plans h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        input {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff79a6;
+        }
+
+        #diet-chart ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        #diet-chart ul li {
+            margin: 1rem 0;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .profile-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .profile-container p {
+            margin: 0.5rem 0;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('profile')">Profile</a></li>
+                <li><a onclick="showPage('diet-chart')">Diet Chart</a></li>
+                <li><a onclick="showPage('login')">Login</a></li>
+                <li><a onclick="showPage('diet-plans')">Diet Plans</a></li> <!-- New navigation link -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Existing sections remain unchanged -->
+
+        <!-- New section for diet plans -->
+        <section id="diet-plans">
+            <h2>Diet Plans</h2>
+            <div id="mediterranean-diet">
+                <h3>The Mediterranean diet</h3>
+                <p>The Mediterranean diet has long been considered the gold standard for nutrition, disease prevention, wellness, and longevity. This is based on its nutrition benefits and sustainability.</p>
+                <h4>How it works</h4>
+                <p>The Mediterranean diet is based on foods that people in countries like Italy and Greece have traditionally eaten. It is rich in:</p>
+                <ul>
+                    <li>vegetables</li>
+                    <li>fruits</li>
+                    <li>whole grains</li>
+                    <li>fish</li>
+                    <li>nuts</li>
+                    <li>lentils</li>
+                    <li>olive oil</li>
+                </ul>
+                <p>Foods such as poultry, eggs, and dairy products
